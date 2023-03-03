@@ -62,7 +62,7 @@ impl Rom {
         let mut vec: Vec<usize> = Vec::new();
         
         for offset in offsets {
-            if let Some(_) = offset.matches(char::is_numeric).next() {
+            if offset.matches(char::is_numeric).next().is_some() {
                 let number = offset.split_whitespace().next().unwrap();
                 vec.push(number.parse().unwrap());
             }
